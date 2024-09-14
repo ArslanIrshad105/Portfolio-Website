@@ -58,7 +58,11 @@ const SkillsSection = () => {
               <span style={{ color: "#0085ff" }}>SKILLS</span> &
               <span style={{ color: "#0085ff" }}> EXPERIENCE</span>
             </Typography>
-            <Typography variant="body1" color="#fff" sx={{ mb: 4 }}>
+            <Typography
+              variant="body1"
+              color="#fff"
+              sx={{ mb: 4, fontSize: "20px" }}
+            >
               Sed ut perspiciatis unde omnis iste natus sit voluptatem
               accusantium doloremque laudantium.
             </Typography>

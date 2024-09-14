@@ -2,8 +2,8 @@
   position: absolute;
   top: 30px;
   right: 40px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   animation: rotate 40s linear infinite;
 }
 .rotating-btm {
