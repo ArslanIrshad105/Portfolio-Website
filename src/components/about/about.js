@@ -8,6 +8,8 @@ import {
   CardContent,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 import "./about.css";
 
 const data = [
@@ -52,8 +54,8 @@ const About = () => {
                 alt="Profile Picture"
                 src="assets/media/images/about-banner.png"
                 sx={{
-                  width: { xs: "80%", md: "50%", lg: "60%", xl: "80%" },
-                  height: { xs: "100%", md: "50%", lg: "100%", xl: "100%" },
+                  width: { xs: "80%", md: "70%", lg: "70%", xl: "80%" },
+                  height: { xs: "100%", md: "100%", lg: "100%", xl: "100%" },
                 }}
               />
               {/* SVG Image */}
@@ -63,7 +65,7 @@ const About = () => {
                 alt="SVG Effect"
                 className="rotating-btm"
                 sx={{
-                  left: { xs: "-60px", md: "0px", lg: "0px", xl: "-60px" },
+                  left: { xs: "-60px", md: "-40px", lg: "-40px", xl: "-60px" },
                   bottom: {
                     xs: "-40px",
                     md: "-40px",
@@ -115,7 +117,7 @@ const About = () => {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ color: "#fff", marginTop: "30px" }}
+              sx={{ color: "#fff", fontSize: "20px", marginTop: "30px" }}
             >
               The standard chunk of Lorem Ipsum used since the 1500s is
               reproduced below for those interested. Sections 1.10.32 and
@@ -123,58 +125,59 @@ const About = () => {
               reproduced in their exact original form, accompanied by English
               versions from the 1914 translation by H. Rackham.
             </Typography>
-
-            <Grid container spacing={2} sx={{ marginTop: "30px" }}>
-              {data.map((val, index) => (
-                <Grid size={{ xs: 4 }} key={index}>
-                  <Card
-                    sx={{
-                      backgroundColor: "#ffffff0d",
-                      color: "#fff",
-                      padding: "10px",
-                      borderRadius: "8px",
-                      border: "1px solid #ffffff26",
-                      "&:hover": {
-                        borderColor: "#0085ff",
-                      },
-                    }}
-                  >
-                    <CardContent
+            <Box>
+              <Grid container spacing={2} sx={{ marginTop: "30px" }}>
+                {data.map((val, index) => (
+                  <Grid size={{ xs: 4 }} key={index}>
+                    <Card
                       sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "left",
+                        backgroundColor: "#ffffff0d",
+                        color: "#fff",
+                        padding: "5px",
+                        borderRadius: "8px",
+                        border: "1px solid #ffffff26",
+                        "&:hover": {
+                          borderColor: "#0085ff",
+                        },
                       }}
                     >
-                      <Typography
-                        variant="h5"
-                        sx={{ color: "#ffffff", fontWeight: "bold" }}
-                      >
-                        {val.count}+
-                      </Typography>
-                      <Typography
-                        variant="body2"
+                      <CardContent
                         sx={{
-                          color: "#8f99b3",
-                          fontWeight: "bold",
-                          fontSize: "12px",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "left",
                         }}
                       >
-                        {val.title}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-
+                        <Typography
+                          variant="h5"
+                          sx={{ color: "#ffffff", fontWeight: "bold" }}
+                        >
+                          {val.count}+
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: "#8f99b3",
+                            fontWeight: "bold",
+                            fontSize: "12px",
+                          }}
+                        >
+                          {val.title}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
             <Button
               variant="contained"
+              endIcon={<ArrowForwardIcon />}
               sx={{
                 backgroundColor: "#0085ff",
                 border: "1px solid #0085ff",
                 marginTop: "50px",
-                borderRadius: "24px",
+                borderRadius: "4px",
                 padding: "10px 24px",
                 textTransform: "none",
                 "&:hover": {

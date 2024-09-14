@@ -90,3 +90,20 @@ export const SKILLS = [
     icon: "assets/media/icons/google_cloud.svg",
   },
 ];
+export const LOGOS = [
+  {
+    logo: "assets/media/icons/brand-1.svg",
+  },
+  {
+    logo: "assets/media/icons/brand-2.svg",
+  },
+  {
+    logo: "assets/media/icons/brand-1.svg",
+  },
+  {
+    logo: "assets/media/icons/brand-2.svg",
+  },
+  {
+    logo: "assets/media/icons/brand-1.svg",
+  },
+];
