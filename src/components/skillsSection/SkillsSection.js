@@ -98,7 +98,12 @@ const SkillsSection = () => {
                           alignItems: "center",
                         }}
                       >
-                        <img src={skill.icon} height={55} width={55} />
+                        <img
+                          src={skill.icon}
+                          height={55}
+                          width={55}
+                          style={{ marginBottom: "10px" }}
+                        />
                         <Typography
                           variant="h6"
                           sx={{ fontSize: "1rem", fontWeight: "bold" }}

@@ -55,14 +55,14 @@ export const SKILLS = [
     icon: "assets/media/icons/mongodb-icon-62.png",
   },
   {
-    name: "Postgres",
-    percentage: 94,
-    icon: "assets/media/icons/postgresql.svg",
-  },
-  {
     name: "MySQL",
     percentage: 94,
     icon: "assets/media/icons/mysql.svg",
+  },
+  {
+    name: "Postgres",
+    percentage: 94,
+    icon: "assets/media/icons/postgresql.svg",
   },
   {
     name: "Firebase",
