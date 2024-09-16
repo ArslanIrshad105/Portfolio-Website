@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Typography, Container, IconButton } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { LinkedIn, GitHub } from "@mui/icons-material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Typewriter from "typewriter-effect";
 import { LOGOS } from "../../utils/Data/Data";
@@ -15,12 +13,12 @@ const MainSection = () => {
   useEffect(() => {
     setBrand(LOGOS);
   }, [brand]);
-  // const autotypingString = ["SHOPIFY DEVELOPER"];
-  const autotypingString = [
-    "FULL STACK MERN DEVELOPER",
-    "WORDPRESS DEVELOPER",
-    "SHOPIFY DEVELOPER",
-  ];
+  const autotypingString = ["SHOPIFY DEVELOPER"];
+  // const autotypingString = [
+  //   "FULL STACK MERN DEVELOPER",
+  //   "WORDPRESS DEVELOPER",
+  //   "SHOPIFY DEVELOPER",
+  // ];
 
   return (
     <Box
@@ -117,33 +115,42 @@ const MainSection = () => {
                   <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                     {/* Social Icons */}
                     <Box sx={{ display: "flex", gap: 1, mt: 6 }}>
-                      <IconButton
-                        sx={{
-                          backgroundColor: "#0061F3",
-                          color: "white",
-                          border: "1px solid #fff",
-                        }}
+                      <a
+                        href="https://www.linkedin.com/in/arslan-irshad-software-engineer/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <FacebookIcon />
-                      </IconButton>
-                      <IconButton
-                        sx={{
-                          backgroundColor: "#E84393",
-                          color: "white",
-                          border: "1px solid #fff",
-                        }}
+                        <IconButton
+                          sx={{
+                            backgroundColor: "#0072B1",
+                            color: "white",
+                            border: "1px solid #fff",
+                            "&:hover": {
+                              backgroundColor: "#0072B1",
+                            },
+                          }}
+                        >
+                          <LinkedIn />
+                        </IconButton>
+                      </a>
+                      <a
+                        href="https://github.com/ArslanIrshad105"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <TwitterIcon />
-                      </IconButton>
-                      <IconButton
-                        sx={{
-                          backgroundColor: "#00BFFF",
-                          color: "white",
-                          border: "1px solid #fff",
-                        }}
-                      >
-                        <LinkedInIcon />
-                      </IconButton>
+                        <IconButton
+                          sx={{
+                            backgroundColor: "#000",
+                            color: "white",
+                            border: "1px solid #fff",
+                            "&:hover": {
+                              backgroundColor: "#000",
+                            },
+                          }}
+                        >
+                          <GitHub />
+                        </IconButton>
+                      </a>
                     </Box>
                   </Grid>
                 </Grid>

@@ -52,7 +52,7 @@ const About = () => {
                 }}
                 component="img"
                 alt="Profile Picture"
-                src="assets/media/images/about-banner.png"
+                src="assets/media/images/about-banner-(3).png"
                 sx={{
                   width: { xs: "80%", md: "70%", lg: "70%", xl: "80%" },
                   height: { xs: "100%", md: "100%", lg: "100%", xl: "100%" },
