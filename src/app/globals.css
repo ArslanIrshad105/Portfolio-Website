@@ -1,7 +1,14 @@
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(
+    90deg,
+    #07233b 1.67%,
+    #041d34 39.95%,
+    #04192d 58.24%,
+    #040e18 80.28%,
+    #050c16 101.48%
+  );
   --foreground: #171717;
-  --font-space-grotesk: "Space Grotesk, sans-serif";
+  --font-space-grotesk: Space_Grotesk, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,9 +28,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   /* font-family: Arial, Helvetica, sans-serif; */
-
-  font-family: var(--font-space-grotesk), sans-serif;
-
+  font-family: var(--font-space-grotesk);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
