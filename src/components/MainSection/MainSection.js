@@ -23,6 +23,7 @@ const MainSection = () => {
   return (
     <Box
       sx={{
+        marginTop: { xs: "80px", sm: "80px", md: "", lg: "50px", xl: "" },
         color: "white",
         minHeight: "100vh",
         display: "flex",
@@ -127,6 +128,7 @@ const MainSection = () => {
                             border: "1px solid #fff",
                             "&:hover": {
                               backgroundColor: "#0072B1",
+                              border: "2px solid #fff",
                             },
                           }}
                         >
@@ -145,6 +147,7 @@ const MainSection = () => {
                             border: "1px solid #fff",
                             "&:hover": {
                               backgroundColor: "#000",
+                              border: "2px solid #fff",
                             },
                           }}
                         >
@@ -165,7 +168,7 @@ const MainSection = () => {
           >
             <Box
               component="img"
-              src="assets/media/images/home-banner.png" // replace with actual image
+              src="assets/media/images/circle-1.avif" // replace with actual image
               alt="Jenna Ortega"
               sx={{ width: "100%", height: "auto" }}
             />

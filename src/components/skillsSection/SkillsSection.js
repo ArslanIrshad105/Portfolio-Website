@@ -20,6 +20,7 @@ const SkillsSection = () => {
 
   return (
     <Box
+      id="skills"
       sx={{
         backgroundColor: "#0788ff1a",
         padding: "100px 0",
