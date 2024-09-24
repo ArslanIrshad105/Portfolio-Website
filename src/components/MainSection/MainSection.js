@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Typography, Container, IconButton } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { LinkedIn, GitHub } from "@mui/icons-material";
+import { LinkedIn, GitHub, WhatsApp } from "@mui/icons-material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Typewriter from "typewriter-effect";
 import { LOGOS } from "../../utils/Data/Data";
@@ -116,6 +116,49 @@ const MainSection = () => {
                   <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                     {/* Social Icons */}
                     <Box sx={{ display: "flex", gap: 1, mt: 6 }}>
+                      <a
+                        href="mailto:arsi.irshad1996@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <IconButton
+                          sx={{
+                            backgroundColor: "#fff",
+                            color: "white",
+                            border: "1px solid #fff",
+                            "&:hover": {
+                              backgroundColor: "#fff",
+                              border: "2px solid #fff",
+                            },
+                          }}
+                        >
+                          <Box
+                            component="img"
+                            src="assets/media/icons/new.png"
+                            height="24px"
+                            width="24px"
+                          />
+                        </IconButton>
+                      </a>
+                      <a
+                        href="https://wa.me/03070949488"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <IconButton
+                          sx={{
+                            backgroundColor: "#25D366",
+                            color: "white",
+                            border: "1px solid #fff",
+                            "&:hover": {
+                              backgroundColor: "#25D366",
+                              border: "2px solid #fff",
+                            },
+                          }}
+                        >
+                          <WhatsApp />
+                        </IconButton>
+                      </a>
                       <a
                         href="https://www.linkedin.com/in/arslan-irshad-software-engineer/"
                         target="_blank"

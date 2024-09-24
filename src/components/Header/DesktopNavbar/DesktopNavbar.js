@@ -56,7 +56,7 @@ const DesktopNavbar = () => {
             <Link href="/">
               <Box
                 component="img"
-                src="assets/media/images/logo-light.svg"
+                src="assets/media/images/logo-light-4.svg"
                 alt="Logo"
                 sx={{ height: 40, marginRight: 2 }}
               />
@@ -119,9 +119,12 @@ const DesktopNavbar = () => {
               <Typography variant="body1">SKILLS</Typography>
             </Link>
             <Link
+              onClick={(e) => handleMenuClick(e, "#contact")}
               sx={{
                 color: "white",
                 textDecoration: "none",
+                borderBottom:
+                  activeSection === "#contact" ? "2px solid white" : "none",
                 "&:hover": {
                   cursor: "pointer",
                 },
