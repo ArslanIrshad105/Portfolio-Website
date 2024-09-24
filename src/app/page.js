@@ -5,6 +5,7 @@ import BrandsSection from "@/components/BrandsSection/BrandsSection";
 import Header from "@/components/Header/Header";
 import MainSection from "@/components/MainSection/MainSection";
 import SkillsSection from "@/components/skillsSection/SkillsSection";
+import ContactSection from "@/components/ContactSection/Contact";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
       </div>
       <div id="skills">
         <SkillsSection />
+      </div>
+      <div id="contact">
+        <ContactSection />
       </div>
     </>
   );
