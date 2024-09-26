@@ -2,7 +2,7 @@ export const SKILLS = [
   {
     name: "HTML 5",
     percentage: 95,
-    icon: "assets/media/icons/html5.svg",
+    icon: "assets/media/icons/html-5-1.png",
   },
   {
     name: "CSS",
@@ -57,7 +57,7 @@ export const SKILLS = [
   {
     name: "MySQL",
     percentage: 94,
-    icon: "assets/media/icons/mysql.svg",
+    icon: "assets/media/icons/mysql.png",
   },
   {
     name: "Postgres",
@@ -72,7 +72,7 @@ export const SKILLS = [
   {
     name: "AWS",
     percentage: 94,
-    icon: "assets/media/icons/aws.svg",
+    icon: "assets/media/icons/aws-logo.png",
   },
   {
     name: "Azure",
@@ -88,22 +88,5 @@ export const SKILLS = [
     name: "Google Cloud",
     percentage: 94,
     icon: "assets/media/icons/google_cloud.svg",
-  },
-];
-export const LOGOS = [
-  {
-    logo: "assets/media/icons/brand-1.svg",
-  },
-  {
-    logo: "assets/media/icons/brand-2.svg",
-  },
-  {
-    logo: "assets/media/icons/brand-1.svg",
-  },
-  {
-    logo: "assets/media/icons/brand-2.svg",
-  },
-  {
-    logo: "assets/media/icons/brand-1.svg",
   },
 ];

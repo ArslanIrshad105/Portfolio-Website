@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
@@ -11,10 +11,8 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Close from "@mui/icons-material/Close";
-import Link from "next/link";
 
 const drawerWidth = 240;
 
@@ -97,7 +95,6 @@ const menuItems = [
   },
 ];
 const MobileNavbar = () => {
-  //   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [navbarBg, setNavbarBg] = useState("transparent"); // State for background color
   const [activeSection, setActiveSection] = useState("#home");
@@ -169,11 +166,11 @@ const MobileNavbar = () => {
           boxShadow: "none",
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ padding: "20px" }}>
           <Box sx={{ flexGrow: 1 }}>
             <Box
               component="img"
-              src="assets/media/images/logo-light.svg" // Replace with your logo path
+              src="assets/media/images/arslan-logo.svg" // Replace with your logo path
               alt="Logo"
               sx={{ height: 40, marginRight: 2 }}
             />

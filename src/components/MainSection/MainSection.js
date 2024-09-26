@@ -23,7 +23,13 @@ const MainSection = () => {
   return (
     <Box
       sx={{
-        marginTop: { xs: "80px", sm: "80px", md: "", lg: "50px", xl: "" },
+        marginTop: {
+          xs: "80px",
+          sm: "80px",
+          md: "50px",
+          lg: "50px",
+          xl: "-20px",
+        },
         color: "white",
         minHeight: "100vh",
         display: "flex",
@@ -76,9 +82,9 @@ const MainSection = () => {
               />
             </Typography>
             <Typography variant="body1" sx={{ mb: 4, fontSize: "20px" }}>
-              Yet bed any for travelling assistance indulgence unpleasing. Not
-              thoughts all exercise blessing. Indulgence way everything joy
-              alteration boisterous the attachment.
+              Partner with me for your next big leap. It's time to say goodbye
+              to any delays. I offer tailored, industry-specific IT consultation
+              and software solutions designed to elevate your business.
             </Typography>
 
             {/* Get in Touch Button */}
