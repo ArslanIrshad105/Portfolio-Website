@@ -56,7 +56,7 @@ const DesktopNavbar = () => {
             <Link href="/">
               <Box
                 component="img"
-                src="assets/media/images/logo-light-4.svg"
+                src="assets/media/images/arslan-logo.svg"
                 alt="Logo"
                 sx={{ height: 40, marginRight: 2 }}
               />
@@ -93,17 +93,7 @@ const DesktopNavbar = () => {
             >
               <Typography variant="body1">ABOUT ME</Typography>
             </Link>
-            {/* <Link
-              sx={{
-                color: "white",
-                textDecoration: "none",
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            >
-              <Typography variant="body1">PROJECTS</Typography>
-            </Link> */}
+
             <Link
               onClick={(e) => handleMenuClick(e, "#skills")}
               sx={{

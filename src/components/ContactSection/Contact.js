@@ -113,11 +113,11 @@ const ContactForm = () => {
                 }}
               >
                 <img
-                  src="assets/media/images/about-banner-(3).png" // Replace with the actual image URL
+                  src="assets/media/images/contact-us-1.png" // Replace with the actual image URL
                   alt="Profile"
                   style={{
-                    width: "300px",
-                    height: "350px",
+                    width: "100%",
+                    height: "100%",
                     borderRadius: "10px",
                     marginBottom: "20px",
                   }}
@@ -239,7 +239,28 @@ const ContactForm = () => {
                   <Grid size={{ xs: 12, md: 6 }}>
                     <TextField
                       fullWidth
-                      label="Your Name"
+                      label="First Name"
+                      variant="outlined"
+                      InputLabelProps={{ style: { color: "#ffffff80" } }}
+                      sx={{
+                        backgroundColor: "#ffffff0d",
+                        color: "#fff",
+                        borderRadius: "5px",
+                        border: isFocused ? "" : "1px solid #ffffff26",
+                        "& .MuiOutlinedInput-root": {
+                          "&:hover fieldset": {
+                            borderColor: "#ffffff80", // Hover border color
+                          },
+                        },
+                      }}
+                      onFocus={() => setIsFocused(true)}
+                      onBlur={() => setIsFocused(false)}
+                    />
+                  </Grid>
+                  <Grid size={{ xs: 12, md: 6 }}>
+                    <TextField
+                      fullWidth
+                      label="Last Name"
                       variant="outlined"
                       InputLabelProps={{ style: { color: "#ffffff80" } }}
                       sx={{
@@ -261,6 +282,27 @@ const ContactForm = () => {
                     <TextField
                       fullWidth
                       label="Your Email"
+                      variant="outlined"
+                      InputLabelProps={{ style: { color: "#ffffff80" } }}
+                      sx={{
+                        backgroundColor: "#ffffff0d",
+                        color: "#fff",
+                        borderRadius: "5px",
+                        border: isFocused ? "" : "1px solid #ffffff26",
+                        "& .MuiOutlinedInput-root": {
+                          "&:hover fieldset": {
+                            borderColor: "#ffffff80", // Hover border color
+                          },
+                        },
+                      }}
+                      onFocus={() => setIsFocused(true)}
+                      onBlur={() => setIsFocused(false)}
+                    />
+                  </Grid>
+                  <Grid size={{ xs: 12, md: 6 }}>
+                    <TextField
+                      fullWidth
+                      label="Contact Number"
                       variant="outlined"
                       InputLabelProps={{ style: { color: "#ffffff80" } }}
                       sx={{
@@ -327,7 +369,7 @@ const ContactForm = () => {
                       fullWidth
                       variant="contained"
                       sx={{
-                        backgroundColor: "#2196F3",
+                        backgroundColor: "#1E90FF",
                         color: "#fff",
                         padding: "10px 0",
                         borderRadius: "5px",

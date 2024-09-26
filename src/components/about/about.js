@@ -52,7 +52,7 @@ const About = () => {
                 }}
                 component="img"
                 alt="Profile Picture"
-                src="assets/media/images/about-banner-(3).png"
+                src="assets/media/images/about-banner.png"
                 sx={{
                   width: { xs: "80%", md: "70%", lg: "70%", xl: "80%" },
                   height: { xs: "100%", md: "100%", lg: "100%", xl: "100%" },
@@ -119,11 +119,16 @@ const About = () => {
               variant="body1"
               sx={{ color: "#fff", fontSize: "20px", marginTop: "30px" }}
             >
-              The standard chunk of Lorem Ipsum used since the 1500s is
-              reproduced below for those interested. Sections 1.10.32 and
-              1.10.33 from de Finibus Bonorum et Malorum by Cicero are also
-              reproduced in their exact original form, accompanied by English
-              versions from the 1914 translation by H. Rackham.
+              Hello! I’m Arslan, a Full-Stack Developer with over 4 years of
+              experience. I specialize in building responsive web apps using the
+              MERN stack (MongoDB, Express, ReactJS, and NodeJS), as well as
+              creating Shopify stores and e-commerce stores and websites on
+              WordPress. I ensure that your site is optimized for all devices,
+              whether desktops or smartphones. Before starting any
+              project—whether it's a web app, landing page, business website, or
+              e-commerce platform—I’ll discuss all the details with you to meet
+              your specific needs. Plus, I offer six months of free maintenance
+              after launch to keep everything running smoothly.
             </Typography>
             <Box>
               <Grid container spacing={2} sx={{ marginTop: "30px" }}>
