@@ -70,6 +70,7 @@ const DesktopNavbar = () => {
             >
               <Typography
                 variant="body1"
+                fontWeight="bold"
                 sx={{
                   borderBottom:
                     activeSection === "#home" ? "2px solid white" : "none",
@@ -91,7 +92,9 @@ const DesktopNavbar = () => {
                 },
               }}
             >
-              <Typography variant="body1">ABOUT ME</Typography>
+              <Typography variant="body1" fontWeight="bold">
+                ABOUT ME
+              </Typography>
             </Link>
 
             <Link
@@ -106,7 +109,25 @@ const DesktopNavbar = () => {
                 },
               }}
             >
-              <Typography variant="body1">SKILLS</Typography>
+              <Typography variant="body1" fontWeight="bold">
+                SKILLS
+              </Typography>
+            </Link>
+            <Link
+              onClick={(e) => handleMenuClick(e, "#projects")}
+              sx={{
+                color: "white",
+                textDecoration: "none",
+                borderBottom:
+                  activeSection === "#projects" ? "2px solid white" : "none",
+                "&:hover": {
+                  cursor: "pointer",
+                },
+              }}
+            >
+              <Typography variant="body1" fontWeight="bold">
+                PROJECTS
+              </Typography>
             </Link>
             <Link
               onClick={(e) => handleMenuClick(e, "#contact")}
@@ -120,7 +141,9 @@ const DesktopNavbar = () => {
                 },
               }}
             >
-              <Typography variant="body1">CONTACT</Typography>
+              <Typography variant="body1" fontWeight="bold">
+                CONTACT
+              </Typography>
             </Link>
           </Box>
         </>
