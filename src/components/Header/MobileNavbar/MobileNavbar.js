@@ -82,12 +82,12 @@ const menuItems = [
     id: "#about",
   },
   {
-    name: "PROJECTS",
-    id: "#projects",
-  },
-  {
     name: "SKILLS",
     id: "#skills",
+  },
+  {
+    name: "PROJECTS",
+    id: "#projects",
   },
   {
     name: "CONTACT",
@@ -222,21 +222,9 @@ const MobileNavbar = () => {
               disablePadding
               onClick={(e) => handleMenuClick(e, item.id)}
             >
-              <ListItemButton
-                onClick={handleDrawerClose}
-                sx={{
-                  color: "white",
-                  textDecoration: "none",
-                  "&:hover": { cursor: "pointer" },
-                  borderBottom:
-                    activeSection === item.id ? "2px solid white" : "none",
-                }}
-              >
-                {/* <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon> */}
-                {/* <Link
-                  onClick={(e) => handleMenuClick(e, item.id)}
+              <ListItemButton onClick={handleDrawerClose}>
+                <ListItemText
+                  primary={item.name}
                   sx={{
                     color: "white",
                     textDecoration: "none",
@@ -244,26 +232,11 @@ const MobileNavbar = () => {
                     borderBottom:
                       activeSection === item.id ? "2px solid white" : "none",
                   }}
-                > */}
-                <ListItemText primary={item.name} />
-                {/* </Link> */}
+                />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-        {/* <Divider />
-        <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton onClick={handleDrawerClose}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
       </Drawer>
     </Box>
   );

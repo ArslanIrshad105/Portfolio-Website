@@ -1,18 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, Button, Typography, Container, IconButton } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { LinkedIn, GitHub, WhatsApp } from "@mui/icons-material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Typewriter from "typewriter-effect";
-import { LOGOS } from "../../utils/Data/Data";
 
 const MainSection = () => {
-  const [brand, setBrand] = useState([]);
-
-  useEffect(() => {
-    setBrand(LOGOS);
-  }, [brand]);
   const autotypingString = ["SHOPIFY DEVELOPER"];
   // const autotypingString = [
   //   "FULL STACK MERN DEVELOPER",
@@ -24,9 +18,9 @@ const MainSection = () => {
     <Box
       sx={{
         marginTop: {
-          xs: "80px",
-          sm: "80px",
-          md: "50px",
+          xs: "40px",
+          sm: "40px",
+          md: "40px",
           lg: "50px",
           xl: "-20px",
         },
@@ -59,9 +53,12 @@ const MainSection = () => {
             </Typography>
             <Typography
               variant="h4"
-              sx={{ fontSize: "50px", fontWeight: "bold" }}
+              sx={{
+                fontSize: "50px",
+                fontWeight: "bold",
+              }}
             >
-              HAY! I'M ARSLAN
+              HAY! I'M JENNA
             </Typography>
             <Typography
               variant="h4"
