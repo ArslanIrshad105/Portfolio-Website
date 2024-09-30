@@ -22,7 +22,7 @@ const data = [
     title: "Years of Experience",
   },
   {
-    count: "50",
+    count: "30",
     title: "Projects Done",
   },
 ];
@@ -76,6 +76,7 @@ const About = () => {
               />
             </Box>
           </Grid>
+
           {/* Text Section */}
           <Grid
             size={{ xs: 12, md: 5 }}
@@ -113,25 +114,25 @@ const About = () => {
               }}
             >
               I AM AVAILABLE FOR
-              <span style={{ color: "#0085ff" }}> UI UX DESIGN</span> PROJECTS
+              <span style={{ color: "#0085ff" }}> MERN STACK</span> PROJECTS
             </Typography>
             <Typography
               variant="body1"
-              sx={{ color: "#fff", fontSize: "20px", marginTop: "30px" }}
+              sx={{ color: "#fff", fontSize: "20px", marginTop: "16px" }}
             >
-              Hello! I’m Arslan, a Full-Stack Developer with over 4 years of
-              experience. I specialize in building responsive web apps using the
-              MERN stack (MongoDB, Express, ReactJS, and NodeJS), as well as
+              Hello! I’m Arslan, a Full-Stack MERN Developer with over 4 years
+              of experience. I specialize in building responsive web apps using
+              the MERN stack (MongoDB, Express, ReactJS, and NodeJS), as well as
               creating Shopify stores and e-commerce stores and websites on
               WordPress. I ensure that your site is optimized for all devices,
               whether desktops or smartphones. Before starting any
               project—whether it's a web app, landing page, business website, or
               e-commerce platform—I’ll discuss all the details with you to meet
-              your specific needs. Plus, I offer six months of free maintenance
+              your specific needs. Plus, I offer two months of free maintenance
               after launch to keep everything running smoothly.
             </Typography>
             <Box>
-              <Grid container spacing={2} sx={{ marginTop: "30px" }}>
+              <Grid container spacing={2} sx={{ marginTop: "16px" }}>
                 {data.map((val, index) => (
                   <Grid size={{ xs: 4 }} key={index}>
                     <Card
@@ -181,7 +182,7 @@ const About = () => {
               sx={{
                 backgroundColor: "#0085ff",
                 border: "1px solid #0085ff",
-                marginTop: "50px",
+                marginTop: "16px",
                 borderRadius: "4px",
                 padding: "10px 24px",
                 textTransform: "none",

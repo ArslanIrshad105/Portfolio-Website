@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
-import {
-  TextField,
-  Button,
-  Typography,
-  Box,
-  Link,
-  IconButton,
-} from "@mui/material";
+import React, { useState } from "react";
+import { TextField, Button, Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { LinkedIn, WhatsApp, GitHub } from "@mui/icons-material";
+import SocialIcons from "../Social_Icons/SocialIcons";
 
 const ContactForm = () => {
   const [isFocused, setIsFocused] = useState(false);
@@ -36,7 +29,6 @@ const ContactForm = () => {
           border: "1px solid #0788ff33",
           padding: "20px",
           borderRadius: "4px 4px 0px 0px",
-          // display: "flex",
           maxWidth: "1300px",
           width: "100%",
         }}
@@ -45,8 +37,6 @@ const ContactForm = () => {
           <Grid
             size={{ xs: 12 }}
             sx={{
-              // backgroundColor: "#000",
-              // border: "1px solid #0788ff33",
               padding: {
                 xs: "10px",
                 sm: "10px",
@@ -55,14 +45,10 @@ const ContactForm = () => {
                 xl: "50px",
               },
               borderRadius: "10px",
-              // display: "flex",
-              // justifyContent: "center",
-              // width: "100%",
             }}
           >
             <Box
               sx={{
-                // display: "flex",
                 textAlign: { xs: "left", md: "left" },
                 marginLeft: {
                   xs: "0",
@@ -137,98 +123,7 @@ const ContactForm = () => {
                 <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
                   <a href="tel:+9203070949488">+923070949488</a>
                 </Typography>
-
-                <Box
-                  sx={{
-                    marginTop: "20px",
-                    display: "flex",
-                    justifyContent: "center",
-                    gap: 1,
-                    mt: 5,
-                  }}
-                >
-                  <a
-                    href="mailto:arsi.irshad1996@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <IconButton
-                      sx={{
-                        backgroundColor: "#fff",
-                        color: "white",
-                        border: "1px solid #fff",
-                        "&:hover": {
-                          backgroundColor: "#fff",
-                          border: "2px solid #fff",
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src="assets/media/icons/new.png"
-                        height="24px"
-                        width="24px"
-                      />
-                    </IconButton>
-                  </a>
-                  <a
-                    href="https://wa.me/03070949488"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <IconButton
-                      sx={{
-                        backgroundColor: "#25D366",
-                        color: "white",
-                        border: "1px solid #fff",
-                        "&:hover": {
-                          backgroundColor: "#25D366",
-                          border: "2px solid #fff",
-                        },
-                      }}
-                    >
-                      <WhatsApp />
-                    </IconButton>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/arslan-irshad-software-engineer/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <IconButton
-                      sx={{
-                        backgroundColor: "#0072B1",
-                        color: "white",
-                        border: "1px solid #fff",
-                        "&:hover": {
-                          backgroundColor: "#0072B1",
-                          border: "2px solid #fff",
-                        },
-                      }}
-                    >
-                      <LinkedIn />
-                    </IconButton>
-                  </a>
-                  <a
-                    href="https://github.com/ArslanIrshad105"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <IconButton
-                      sx={{
-                        backgroundColor: "#000",
-                        color: "white",
-                        border: "1px solid #fff",
-                        "&:hover": {
-                          backgroundColor: "#000",
-                          border: "2px solid #fff",
-                        },
-                      }}
-                    >
-                      <GitHub />
-                    </IconButton>
-                  </a>
-                </Box>
+                <SocialIcons justifyContent={"center"} />
               </Box>
             </Grid>
 
