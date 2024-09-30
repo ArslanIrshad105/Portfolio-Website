@@ -1,18 +1,17 @@
 "use client";
 import React from "react";
-import { Box, Button, Typography, Container, IconButton } from "@mui/material";
+import { Box, Button, Typography, Container } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { LinkedIn, GitHub, WhatsApp } from "@mui/icons-material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Typewriter from "typewriter-effect";
+import SocialIcons from "../Social_Icons/SocialIcons";
 
 const MainSection = () => {
-  const autotypingString = ["SHOPIFY DEVELOPER"];
-  // const autotypingString = [
-  //   "FULL STACK MERN DEVELOPER",
-  //   "WORDPRESS DEVELOPER",
-  //   "SHOPIFY DEVELOPER",
-  // ];
+  const autotypingString = [
+    "FULL STACK MERN DEVELOPER",
+    "WORDPRESS DEVELOPER",
+    "SHOPIFY DEVELOPER",
+  ];
 
   return (
     <Box
@@ -56,9 +55,10 @@ const MainSection = () => {
               sx={{
                 fontSize: "50px",
                 fontWeight: "bold",
+                marginTop: "16px",
               }}
             >
-              HAY! I'M JENNA
+              HAY! I'M ARSLAN
             </Typography>
             <Typography
               variant="h4"
@@ -66,6 +66,7 @@ const MainSection = () => {
                 color: "#0B72EC",
                 fontSize: "50px",
                 fontWeight: "bold",
+
                 mb: 2,
               }}
             >
@@ -118,89 +119,7 @@ const MainSection = () => {
                   </Grid>
                   <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                     {/* Social Icons */}
-                    <Box sx={{ display: "flex", gap: 1, mt: 6 }}>
-                      <a
-                        href="mailto:arsi.irshad1996@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconButton
-                          sx={{
-                            backgroundColor: "#fff",
-                            color: "white",
-                            border: "1px solid #fff",
-                            "&:hover": {
-                              backgroundColor: "#fff",
-                              border: "2px solid #fff",
-                            },
-                          }}
-                        >
-                          <Box
-                            component="img"
-                            src="assets/media/icons/new.png"
-                            height="24px"
-                            width="24px"
-                          />
-                        </IconButton>
-                      </a>
-                      <a
-                        href="https://wa.me/03070949488"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconButton
-                          sx={{
-                            backgroundColor: "#25D366",
-                            color: "white",
-                            border: "1px solid #fff",
-                            "&:hover": {
-                              backgroundColor: "#25D366",
-                              border: "2px solid #fff",
-                            },
-                          }}
-                        >
-                          <WhatsApp />
-                        </IconButton>
-                      </a>
-                      <a
-                        href="https://www.linkedin.com/in/arslan-irshad-software-engineer/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconButton
-                          sx={{
-                            backgroundColor: "#0072B1",
-                            color: "white",
-                            border: "1px solid #fff",
-                            "&:hover": {
-                              backgroundColor: "#0072B1",
-                              border: "2px solid #fff",
-                            },
-                          }}
-                        >
-                          <LinkedIn />
-                        </IconButton>
-                      </a>
-                      <a
-                        href="https://github.com/ArslanIrshad105"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconButton
-                          sx={{
-                            backgroundColor: "#000",
-                            color: "white",
-                            border: "1px solid #fff",
-                            "&:hover": {
-                              backgroundColor: "#000",
-                              border: "2px solid #fff",
-                            },
-                          }}
-                        >
-                          <GitHub />
-                        </IconButton>
-                      </a>
-                    </Box>
+                    <SocialIcons justifyContent={"left"} />
                   </Grid>
                 </Grid>
               </Container>
