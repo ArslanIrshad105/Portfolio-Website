@@ -96,19 +96,20 @@ const Logos = () => {
       sx={{
         background: "#0788ff1a",
         padding: "50px",
-        marginTop: {
-          xs: "-20px",
-          sm: "-20px",
-          md: "-150px",
-          lg: "-50px",
-          xl: "-120px",
-        },
+        // marginTop: {
+        //   xs: "-20px",
+        //   sm: "-20px",
+        //   md: "-150px",
+        //   lg: "-20px",
+        //   xl: "-120px",
+        // },
       }}
     >
       <Container>
         <Stack direction="row" spacing={4} alignItems="center">
           {LOGOS.map((item, index) => (
             <Stack
+              key={index}
               alignItems="center"
               sx={{ display: "flex", flexDirection: "row" }}
             >

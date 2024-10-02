@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
 import "./about.css";
 
 const data = [
@@ -110,7 +109,7 @@ const About = () => {
                 color: "#ffffff",
                 fontWeight: "bold",
                 marginTop: "16px",
-                fontSize: "40px",
+                fontSize: { xs: "33px", md: "40px" },
               }}
             >
               I AM AVAILABLE FOR
@@ -118,7 +117,7 @@ const About = () => {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ color: "#fff", fontSize: "20px", marginTop: "16px" }}
+              sx={{ color: "#fff", fontSize: "16px", marginTop: "16px" }}
             >
               Hello! I’m Arslan, a Full-Stack MERN Developer with over 4 years
               of experience. I specialize in building responsive web apps using
@@ -132,48 +131,55 @@ const About = () => {
               after launch to keep everything running smoothly.
             </Typography>
             <Box>
-              <Grid container spacing={2} sx={{ marginTop: "16px" }}>
-                {data.map((val, index) => (
-                  <Grid size={{ xs: 4 }} key={index}>
-                    <Card
-                      sx={{
-                        backgroundColor: "#ffffff0d",
-                        color: "#fff",
-                        padding: "5px",
-                        borderRadius: "8px",
-                        border: "1px solid #ffffff26",
-                        "&:hover": {
-                          borderColor: "#0085ff",
-                        },
-                      }}
-                    >
-                      <CardContent
+              <Grid container spacing={1} sx={{ marginTop: "16px" }}>
+                {data.map((item, index) => {
+                  // Split the title into the first word and the rest of the sentence
+                  const [firstWord, ...restOfTitle] = item.title.split(" ");
+                  return (
+                    <Grid size={{ xs: 4 }} key={index}>
+                      <Card
                         sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "left",
+                          backgroundColor: "#ffffff0d",
+                          color: "#fff",
+                          padding: "5px",
+                          borderRadius: "8px",
+                          border: "1px solid #ffffff26",
+                          "&:hover": {
+                            borderColor: "#0085ff",
+                          },
                         }}
                       >
-                        <Typography
-                          variant="h5"
-                          sx={{ color: "#ffffff", fontWeight: "bold" }}
-                        >
-                          {val.count}+
-                        </Typography>
-                        <Typography
-                          variant="body2"
+                        <CardContent
                           sx={{
-                            color: "#8f99b3",
-                            fontWeight: "bold",
-                            fontSize: "12px",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "left",
                           }}
                         >
-                          {val.title}
-                        </Typography>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
+                          <Typography
+                            variant="h5"
+                            sx={{ color: "#ffffff", fontWeight: "bold" }}
+                          >
+                            {item.count}+
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: "#8f99b3",
+                              fontWeight: "bold",
+                              fontSize: "12px",
+                            }}
+                          >
+                            {firstWord}
+                            <br />
+                            {restOfTitle.join(" ")}
+                            {/* Join the rest of the title back into a string */}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+                  );
+                })}
               </Grid>
             </Box>
             <Button
@@ -182,7 +188,7 @@ const About = () => {
               sx={{
                 backgroundColor: "#0085ff",
                 border: "1px solid #0085ff",
-                marginTop: "16px",
+                marginTop: "28px",
                 borderRadius: "4px",
                 padding: "10px 24px",
                 textTransform: "none",

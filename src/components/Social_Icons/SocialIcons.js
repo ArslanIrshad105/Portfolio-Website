@@ -3,14 +3,15 @@ import React from "react";
 import { Box, IconButton } from "@mui/material";
 import { LinkedIn, GitHub, WhatsApp } from "@mui/icons-material";
 
-const SocialIcons = ({ justifyContent }) => {
+const SocialIcons = ({ justifyContent, marginTop, marginLeft }) => {
   return (
     <Box
       sx={{
         display: "flex",
         justifyContent: { justifyContent },
         gap: 1,
-        mt: 6,
+        marginTop: marginTop,
+        marginLeft: marginLeft,
       }}
     >
       <a

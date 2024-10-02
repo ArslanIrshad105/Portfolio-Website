@@ -20,7 +20,6 @@ const SkillsSection = () => {
 
   return (
     <Box
-      id="skills"
       sx={{
         backgroundColor: "#0788ff1a",
         padding: "100px 0",
@@ -85,7 +84,7 @@ const SkillsSection = () => {
 
                         color: "#fff",
                         padding: "10px",
-                        borderRadius: "20px",
+                        borderRadius: "8px",
                         border: "2px solid #0085ff",
                         "&:hover": {
                           borderColor: "#fff",

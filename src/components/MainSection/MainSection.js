@@ -7,20 +7,16 @@ import Typewriter from "typewriter-effect";
 import SocialIcons from "../Social_Icons/SocialIcons";
 
 const MainSection = () => {
-  const autotypingString = [
-    "FULL STACK MERN DEVELOPER",
-    "WORDPRESS DEVELOPER",
-    "SHOPIFY DEVELOPER",
-  ];
+  const autotypingString = ["FULL STACK MERN", "WORDPRESS", "SHOPIFY"];
 
   return (
     <Box
       sx={{
         marginTop: {
-          xs: "40px",
-          sm: "40px",
-          md: "40px",
-          lg: "50px",
+          xs: "0px",
+          sm: "0px",
+          md: "80px",
+          lg: "60px",
           xl: "-20px",
         },
         color: "white",
@@ -53,7 +49,7 @@ const MainSection = () => {
             <Typography
               variant="h4"
               sx={{
-                fontSize: "50px",
+                fontSize: { xs: "38px", md: "45px" },
                 fontWeight: "bold",
                 marginTop: "16px",
               }}
@@ -64,10 +60,8 @@ const MainSection = () => {
               variant="h4"
               sx={{
                 color: "#0B72EC",
-                fontSize: "50px",
+                fontSize: { xs: "38px", md: "45px" },
                 fontWeight: "bold",
-
-                mb: 2,
               }}
             >
               I'M A{" "}
@@ -78,15 +72,19 @@ const MainSection = () => {
                   loop: true,
                 }}
               />
+              DEVELOPER
             </Typography>
-            <Typography variant="body1" sx={{ mb: 4, fontSize: "20px" }}>
+            <Typography
+              variant="body1"
+              sx={{ marginTop: "16px", fontSize: "16px" }}
+            >
               Partner with me for your next big leap. It's time to say goodbye
               to any delays. I offer tailored, industry-specific IT consultation
               and software solutions designed to elevate your business.
             </Typography>
 
             {/* Get in Touch Button */}
-            <Box>
+            <Box sx={{ marginTop: "30px" }}>
               <Container>
                 <Grid
                   container
@@ -101,7 +99,7 @@ const MainSection = () => {
                       sx={{
                         backgroundColor: "#0085ff",
                         border: "1px solid #0085ff",
-                        marginTop: "50px",
+                        marginLeft: { xs: "-20px", sm: "-20px", md: "-25px" },
                         borderRadius: "4px",
                         padding: "10px 24px",
                         fontWeight: "bold",
@@ -119,7 +117,7 @@ const MainSection = () => {
                   </Grid>
                   <Grid size={{ xs: 12, sm: 12, md: 6 }}>
                     {/* Social Icons */}
-                    <SocialIcons justifyContent={"left"} />
+                    <SocialIcons justifyContent={"left"} marginLeft={"-20px"} />
                   </Grid>
                 </Grid>
               </Container>
