@@ -1,3 +1,26 @@
+export const menuItems = [
+  {
+    name: "HOME",
+    id: "#home",
+  },
+  {
+    name: "ABOUT",
+    id: "#about",
+  },
+  {
+    name: "PROJECTS",
+    id: "#projects",
+  },
+  {
+    name: "SKILLS",
+    id: "#skills",
+  },
+  {
+    name: "CONTACT",
+    id: "#contact",
+  },
+];
+
 export const SKILLS = [
   {
     name: "HTML 5",

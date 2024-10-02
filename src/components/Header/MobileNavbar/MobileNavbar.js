@@ -13,6 +13,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Close from "@mui/icons-material/Close";
+import { menuItems } from "@/utils/Data/Data";
 
 const drawerWidth = 240;
 
@@ -72,28 +73,33 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-start",
 }));
 
-const menuItems = [
-  {
-    name: "HOME",
-    id: "#home",
-  },
-  {
-    name: "ABOUT ME",
-    id: "#about",
-  },
-  {
-    name: "SKILLS",
-    id: "#skills",
-  },
-  {
-    name: "PROJECTS",
-    id: "#projects",
-  },
-  {
-    name: "CONTACT",
-    id: "#contact",
-  },
-];
+// const menuItems = [
+//   {
+//     name: "HOME",
+//     id: "#home",
+//   },
+//   {
+//     name: "ABOUT ME",
+//     id: "#about",
+//   },
+//   {
+//     name: "SERVICES",
+//     id: "#services",
+//   },
+//   {
+//     name: "SKILLS",
+//     id: "#skills",
+//   },
+//   {
+//     name: "PROJECTS",
+//     id: "#projects",
+//   },
+//   {
+//     name: "CONTACT",
+//     id: "#contact",
+//   },
+// ];
+
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
   const [navbarBg, setNavbarBg] = useState("transparent"); // State for background color

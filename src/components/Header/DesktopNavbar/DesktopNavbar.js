@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Typography, Button, Box, Link } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { menuItems } from "@/utils/Data/Data";
 
-const DesktopNavbar = () => {
+const DesktopNavbar = ({ activeSection }) => {
   const theme = useTheme();
   const [navbarBg, setNavbarBg] = useState("transparent"); // State for background color
-  const [activeSection, setActiveSection] = useState("#home");
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -20,7 +20,7 @@ const DesktopNavbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [activeSection]);
 
   // Scroll to section when clicking a link
   const handleMenuClick = (event, sectionId) => {
@@ -32,7 +32,6 @@ const DesktopNavbar = () => {
         behavior: "smooth",
         block: "start",
       });
-      setActiveSection(sectionId); // Update active section on click
     }
   };
 
@@ -64,87 +63,24 @@ const DesktopNavbar = () => {
           </Box>
           {/* Menu Section */}
           <Box sx={{ display: "flex", gap: 4 }}>
-            <Link
-              onClick={(e) => handleMenuClick(e, "#home")}
-              sx={{ color: "white", textDecoration: "none" }}
-            >
-              <Typography
-                variant="body1"
-                fontWeight="bold"
-                sx={{
-                  borderBottom:
-                    activeSection === "#home" ? "2px solid white" : "none",
-                  "&:hover": { cursor: "pointer" },
-                }}
+            {menuItems?.map((item, index) => (
+              <Link
+                key={index}
+                onClick={(e) => handleMenuClick(e, item.id)}
+                sx={{ color: "white", textDecoration: "none" }}
               >
-                HOME
-              </Typography>
-            </Link>
-            <Link
-              onClick={(e) => handleMenuClick(e, "#about")}
-              sx={{
-                color: "white",
-                textDecoration: "none",
-                borderBottom:
-                  activeSection === "#about" ? "2px solid white" : "none",
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            >
-              <Typography variant="body1" fontWeight="bold">
-                ABOUT ME
-              </Typography>
-            </Link>
-
-            <Link
-              onClick={(e) => handleMenuClick(e, "#skills")}
-              sx={{
-                color: "white",
-                textDecoration: "none",
-                borderBottom:
-                  activeSection === "#skills" ? "2px solid white" : "none",
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            >
-              <Typography variant="body1" fontWeight="bold">
-                SKILLS
-              </Typography>
-            </Link>
-            <Link
-              onClick={(e) => handleMenuClick(e, "#projects")}
-              sx={{
-                color: "white",
-                textDecoration: "none",
-                borderBottom:
-                  activeSection === "#projects" ? "2px solid white" : "none",
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            >
-              <Typography variant="body1" fontWeight="bold">
-                PROJECTS
-              </Typography>
-            </Link>
-            <Link
-              onClick={(e) => handleMenuClick(e, "#contact")}
-              sx={{
-                color: "white",
-                textDecoration: "none",
-                borderBottom:
-                  activeSection === "#contact" ? "2px solid white" : "none",
-                "&:hover": {
-                  cursor: "pointer",
-                },
-              }}
-            >
-              <Typography variant="body1" fontWeight="bold">
-                CONTACT
-              </Typography>
-            </Link>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    borderBottom:
+                      activeSection === item.id ? "2px solid white" : "none",
+                    "&:hover": { cursor: "pointer" },
+                  }}
+                >
+                  {item.name}
+                </Typography>
+              </Link>
+            ))}
           </Box>
         </>
 

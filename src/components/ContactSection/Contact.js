@@ -123,7 +123,7 @@ const ContactForm = () => {
                 <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
                   <a href="tel:+9203070949488">+923070949488</a>
                 </Typography>
-                <SocialIcons justifyContent={"center"} />
+                <SocialIcons justifyContent={"center"} marginTop={"16px"} />
               </Box>
             </Grid>
 

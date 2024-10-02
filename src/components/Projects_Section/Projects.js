@@ -112,7 +112,7 @@ const Projects = () => {
   };
 
   return (
-    <Box sx={{ padding: "40px 0", color: "#fff" }}>
+    <Box sx={{ padding: "100px 0px", color: "#fff" }}>
       <Container>
         <Grid container spacing={4}>
           <Grid item xs={12}>
