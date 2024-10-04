@@ -1,11 +1,39 @@
-import React, { useState } from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
+import React from "react";
+import { Button, Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import SocialIcons from "../Social_Icons/SocialIcons";
+import MUITextField from "../MUITextField/MUITextField";
+import { useFormik } from "formik";
+import { contactForm } from "@/schemas";
+import "../ContactSection/style.css";
+
+const initialValues = {
+  firstName: null,
+  lastName: null,
+  email: null,
+  phoneNumber: null,
+  subject: null,
+  message: null,
+};
 
 const ContactForm = () => {
-  const [isFocused, setIsFocused] = useState(false);
+  const formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: contactForm,
 
+    // onSubmit: (values, { setErrors }) => {
+    //   userSignup(values)
+    //     .then((response) => {
+    //       console.log("Response", response);
+    //     })
+    //     .catch((error) => {
+    //       console.log("Error", error);
+    //     });
+    // },
+    onSubmit: (values) => {
+      console.log("Values", values);
+    },
+  });
   return (
     <Box
       sx={{
@@ -65,7 +93,10 @@ const ContactForm = () => {
               >
                 Let’s Discuss Your Project
               </Typography>
-              <Typography sx={{ color: "#a1a1a1" }}>
+              <Typography
+                variant="body1"
+                sx={{ color: "#ffffff", fontSize: "16px" }}
+              >
                 Always available for freelancing if the right project comes
                 along.
                 <br />
@@ -99,7 +130,7 @@ const ContactForm = () => {
                 }}
               >
                 <img
-                  src="assets/media/images/contact-us-1.png" // Replace with the actual image URL
+                  src="assets/media/images/contact-us-1.png"
                   alt="Profile"
                   style={{
                     width: "100%",
@@ -109,18 +140,28 @@ const ContactForm = () => {
                   }}
                 />
 
-                <Typography sx={{ color: "#fff", marginTop: "20px" }}>
+                <Typography
+                  sx={{ color: "#fff", fontWeight: "bold", marginTop: "20px" }}
+                >
                   Email Address:
                 </Typography>
-                <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "#fff", fontSize: "22px", fontWeight: "bold" }}
+                >
                   <a href="mailto:arsi.irshad1996@gmail.com">
                     arsi.irshad1996@gmail.com
                   </a>
                 </Typography>
-                <Typography sx={{ color: "#fff", marginTop: "10px" }}>
+                <Typography
+                  sx={{ color: "#fff", fontWeight: "bold", marginTop: "10px" }}
+                >
                   Phone Number:
                 </Typography>
-                <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "#fff", fontSize: "22px", fontWeight: "bold" }}
+                >
                   <a href="tel:+9203070949488">+923070949488</a>
                 </Typography>
                 <SocialIcons justifyContent={"center"} marginTop={"16px"} />
@@ -130,13 +171,13 @@ const ContactForm = () => {
             {/* Right Section - Form */}
             <Grid size={{ xs: 12, md: 8 }}>
               <Box sx={{ padding: "20px" }}>
-                <Grid container spacing={2}>
+                {/* <Grid container spacing={2}>
                   <Grid size={{ xs: 12, md: 6 }}>
                     <TextField
                       fullWidth
                       label="First Name"
                       variant="outlined"
-                      InputLabelProps={{ style: { color: "#ffffff80" } }}
+                      // slotProps.htmlInput={{ style: { color: "#ffffff80" } }}
                       sx={{
                         backgroundColor: "#ffffff0d",
                         color: "#fff",
@@ -144,7 +185,7 @@ const ContactForm = () => {
                         border: isFocused ? "" : "1px solid #ffffff26",
                         "& .MuiOutlinedInput-root": {
                           "&:hover fieldset": {
-                            borderColor: "#ffffff80", // Hover border color
+                            borderColor: "#ffffff80",
                           },
                         },
                       }}
@@ -165,7 +206,7 @@ const ContactForm = () => {
                         border: isFocused ? "" : "1px solid #ffffff26",
                         "& .MuiOutlinedInput-root": {
                           "&:hover fieldset": {
-                            borderColor: "#ffffff80", // Hover border color
+                            borderColor: "#ffffff80",
                           },
                         },
                       }}
@@ -186,7 +227,7 @@ const ContactForm = () => {
                         border: isFocused ? "" : "1px solid #ffffff26",
                         "& .MuiOutlinedInput-root": {
                           "&:hover fieldset": {
-                            borderColor: "#ffffff80", // Hover border color
+                            borderColor: "#ffffff80",
                           },
                         },
                       }}
@@ -207,7 +248,7 @@ const ContactForm = () => {
                         border: isFocused ? "" : "1px solid #ffffff26",
                         "& .MuiOutlinedInput-root": {
                           "&:hover fieldset": {
-                            borderColor: "#ffffff80", // Hover border color
+                            borderColor: "#ffffff80",
                           },
                         },
                       }}
@@ -228,7 +269,7 @@ const ContactForm = () => {
                         border: isFocused ? "" : "1px solid #ffffff26",
                         "& .MuiOutlinedInput-root": {
                           "&:hover fieldset": {
-                            borderColor: "#ffffff80", // Hover border color
+                            borderColor: "#ffffff80",
                           },
                         },
                       }}
@@ -251,7 +292,7 @@ const ContactForm = () => {
                         border: isFocused ? "" : "1px solid #ffffff26",
                         "& .MuiOutlinedInput-root": {
                           "&:hover fieldset": {
-                            borderColor: "#ffffff80", // Hover border color
+                            borderColor: "#ffffff80",
                           },
                         },
                       }}
@@ -273,7 +314,128 @@ const ContactForm = () => {
                       Send Message
                     </Button>
                   </Grid>
-                </Grid>
+                </Grid> */}
+                <form onSubmit={formik.handleSubmit}>
+                  <Grid container spacing={2}>
+                    <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+                      <MUITextField
+                        name="firstName"
+                        label="First Name*"
+                        type="text"
+                        value={formik.values.firstName}
+                        handlerChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                          formik.touched.firstName &&
+                          Boolean(formik.errors.firstName)
+                        }
+                        helperText={
+                          formik.touched.firstName && formik.errors.firstName
+                        }
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+                      <MUITextField
+                        name="lastName"
+                        label="Last Name*"
+                        type="text"
+                        value={formik.values.lastName}
+                        handlerChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                          formik.touched.lastName &&
+                          Boolean(formik.errors.lastName)
+                        }
+                        helperText={
+                          formik.touched.lastName && formik.errors.lastName
+                        }
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+                      <MUITextField
+                        name="email"
+                        label="Email*"
+                        type="email"
+                        value={formik.values.email}
+                        handlerChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                          formik.touched.email && Boolean(formik.errors.email)
+                        }
+                        helperText={formik.touched.email && formik.errors.email}
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+                      <MUITextField
+                        name="phoneNumber"
+                        label="Phone Number"
+                        type="text"
+                        value={formik.values.phoneNumber}
+                        handlerChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                          formik.touched.phoneNumber &&
+                          Boolean(formik.errors.phoneNumber)
+                        }
+                        helperText={
+                          formik.touched.phoneNumber &&
+                          formik.errors.phoneNumber
+                        }
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12 }}>
+                      <MUITextField
+                        name="subject"
+                        label="What are you seeking?*"
+                        type="text"
+                        value={formik.values.subject}
+                        handlerChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                          formik.touched.subject &&
+                          Boolean(formik.errors.subject)
+                        }
+                        helperText={
+                          formik.touched.subject && formik.errors.subject
+                        }
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12 }}>
+                      <MUITextField
+                        multiline
+                        rows={4}
+                        name="message"
+                        label="Please drop your message.*"
+                        type="text"
+                        value={formik.values.message}
+                        handlerChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                          formik.touched.message &&
+                          Boolean(formik.errors.message)
+                        }
+                        helperText={
+                          formik.touched.message && formik.errors.message
+                        }
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12 }}>
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        type="submit"
+                        sx={{
+                          backgroundColor: "#1E90FF",
+                          color: "#fff",
+                          padding: "10px 0",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        Send Message
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </form>
               </Box>
             </Grid>
           </Grid>

@@ -29,7 +29,7 @@ const Footer = () => {
               }}
             >
               <Typography variant="body1" sx={{ color: "#ffffffbf" }}>
-                © 2024 copyright all right reserved
+                © All Rights Reserved By Arslan
               </Typography>
             </Box>
           </Grid>

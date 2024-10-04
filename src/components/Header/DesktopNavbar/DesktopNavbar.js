@@ -72,6 +72,9 @@ const DesktopNavbar = ({ activeSection }) => {
                 <Typography
                   variant="body1"
                   sx={{
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    letterSpacing: "1px",
                     borderBottom:
                       activeSection === item.id ? "2px solid white" : "none",
                     "&:hover": { cursor: "pointer" },
@@ -99,6 +102,7 @@ const DesktopNavbar = ({ activeSection }) => {
               border: "1px solid white",
             },
           }}
+          onClick={(e) => handleMenuClick(e, "#contact")}
         >
           LET'S TALK
         </Button>

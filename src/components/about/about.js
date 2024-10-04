@@ -186,8 +186,8 @@ const About = () => {
               variant="contained"
               endIcon={<ArrowForwardIcon />}
               sx={{
-                backgroundColor: "#0085ff",
-                border: "1px solid #0085ff",
+                backgroundColor: "#1E90FF",
+                border: "1px solid #1E90FF",
                 marginTop: "28px",
                 borderRadius: "4px",
                 padding: "10px 24px",

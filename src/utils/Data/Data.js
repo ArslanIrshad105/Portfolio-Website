@@ -113,3 +113,34 @@ export const SKILLS = [
     icon: "assets/media/icons/google_cloud.svg",
   },
 ];
+
+export const SERVICES = [
+  {
+    title: "Web Development",
+    description:
+      "I design & build highly scalable web applications using the latest tech stacks including ReactJS, NextJS, VueJS, ExpressJS and NodeJS.",
+    image: "assets/media/icons/javascript.svg",
+    altText: "Web Development",
+  },
+  {
+    title: "WordPress Development",
+    description:
+      "I specialize in designing and developing websites and eCommerce stores using WordPress, providing customized solutions that meet clients' unique business needs.",
+    image: "assets/media/icons/wordpress.png",
+    altText: "WordPress Development",
+  },
+  {
+    title: "Shopify Development",
+    description:
+      "I specialize in developing eCommerce stores with Shopify, delivering tailored solutions that align with clients' specific business requirements.",
+    image: "assets/media/icons/shopify.svg",
+    altText: "Shopify Development",
+  },
+  {
+    title: "DevOps",
+    description:
+      "I have 4 years of experience in designing recommended architectures for AWS, DigitalOcean, Heroku, and Google Cloud Platform.",
+    image: "assets/media/icons/devops.png",
+    altText: "DevOps",
+  },
+];

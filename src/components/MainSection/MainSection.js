@@ -97,8 +97,8 @@ const MainSection = () => {
                       variant="contained"
                       endIcon={<ArrowForwardIcon />}
                       sx={{
-                        backgroundColor: "#0085ff",
-                        border: "1px solid #0085ff",
+                        backgroundColor: "#1E90FF",
+                        border: "1px solid #1E90FF",
                         marginLeft: { xs: "-20px", sm: "-20px", md: "-25px" },
                         borderRadius: "4px",
                         padding: "10px 24px",
@@ -131,7 +131,7 @@ const MainSection = () => {
           >
             <Box
               component="img"
-              src="assets/media/images/circle-1.avif" // replace with actual image
+              src="assets/media/images/circle-12.png" // replace with actual image
               alt="Jenna Ortega"
               sx={{ width: "100%", height: "auto" }}
             />
