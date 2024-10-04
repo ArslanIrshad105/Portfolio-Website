@@ -15,6 +15,7 @@ export default function Home() {
   const sectionRefs = {
     home: useRef(null),
     about: useRef(null),
+    services: useRef(null),
     projects: useRef(null),
     skills: useRef(null),
     contact: useRef(null),
