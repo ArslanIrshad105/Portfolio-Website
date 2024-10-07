@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import SocialIcons from "../Social_Icons/SocialIcons";
@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import { contactFormSchema } from "@/schemas";
 import "../ContactSection/style.css";
 import { sendEmail } from "@/APIs/APIs";
+import BasicAlerts from "../MUIAlert/MUIAlert";
 
 const serviceId = process.env.NEXT_PUBLIC_SERVIES_ID;
 const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
@@ -22,6 +23,12 @@ const initialValues = {
 };
 
 const ContactForm = () => {
+  const [alert, setAlert] = useState({
+    show: false,
+    severity: "",
+    title: "",
+    body: "",
+  });
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: contactFormSchema,
@@ -43,15 +50,23 @@ const ContactForm = () => {
       };
       sendEmail(data)
         .then((response) => {
-          if (response === "OK") {
-            console.log("Email sent successfully");
+          if (response.status === 200) {
+            setAlert({
+              show: true,
+              severity: "success",
+              title: "Submitted",
+              body: "Your message has been sent successfully! I will get back to you soon.",
+            });
             resetForm();
-          } else {
-            console.log("Error", response);
           }
         })
         .catch((error) => {
-          console.log("Error", error);
+          setAlert({
+            show: true,
+            severity: "error",
+            title: error.code,
+            body: error.message,
+          });
         });
     },
   });
@@ -463,6 +478,16 @@ const ContactForm = () => {
           </Grid>
         </Grid>
       </Box>
+
+      {alert.show && (
+        <BasicAlerts
+          show={alert.show}
+          severity={alert.severity}
+          alertTitle={alert.title}
+          alertbody={alert.body}
+          setAlert={setAlert}
+        />
+      )}
     </Box>
   );
 };
