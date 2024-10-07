@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const contactForm = Yup.object({
+export const contactFormSchema = Yup.object({
   firstName: Yup.string()
     .max(25, "Maximum limit reached")
     .required("First Name is required.")

@@ -10,7 +10,7 @@ const MUITextField = ({
   value,
   error,
   helperText,
-  handlerChange,
+  onChange,
   onBlur,
 }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -26,7 +26,7 @@ const MUITextField = ({
       value={value}
       error={error}
       helperText={helperText}
-      onChange={handlerChange}
+      onChange={onChange}
       onBlur={onBlur}
       variant="outlined"
       InputLabelProps={{ style: { color: "#ffffff80" } }}
