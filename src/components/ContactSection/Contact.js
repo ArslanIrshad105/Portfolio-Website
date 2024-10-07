@@ -1,39 +1,61 @@
 import React from "react";
-import { Button, Typography, Box } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import SocialIcons from "../Social_Icons/SocialIcons";
 import MUITextField from "../MUITextField/MUITextField";
 import { useFormik } from "formik";
-import { contactForm } from "@/schemas";
+import { contactFormSchema } from "@/schemas";
 import "../ContactSection/style.css";
+import { sendEmail } from "@/APIs/APIs";
+
+const serviceId = process.env.NEXT_PUBLIC_SERVIES_ID;
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 
 const initialValues = {
-  firstName: null,
-  lastName: null,
-  email: null,
-  phoneNumber: null,
-  subject: null,
-  message: null,
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNumber: "",
+  subject: "",
+  message: "",
 };
 
 const ContactForm = () => {
   const formik = useFormik({
     initialValues: initialValues,
-    validationSchema: contactForm,
+    validationSchema: contactFormSchema,
 
-    // onSubmit: (values, { setErrors }) => {
-    //   userSignup(values)
-    //     .then((response) => {
-    //       console.log("Response", response);
-    //     })
-    //     .catch((error) => {
-    //       console.log("Error", error);
-    //     });
-    // },
-    onSubmit: (values) => {
-      console.log("Values", values);
+    onSubmit: (values, { resetForm }) => {
+      const data = {
+        service_id: serviceId,
+        template_id: templateId,
+        user_id: publicKey,
+        template_params: {
+          to_name: "Arslan",
+          from_firstname: values.firstName,
+          from_lastname: values.lastName,
+          from_email: values.email,
+          from_phonenumber: values.phoneNumber,
+          subject: values.subject,
+          message: values.message,
+        },
+      };
+      sendEmail(data)
+        .then((response) => {
+          if (response === "OK") {
+            console.log("Email sent successfully");
+            resetForm();
+          } else {
+            console.log("Error", response);
+          }
+        })
+        .catch((error) => {
+          console.log("Error", error);
+        });
     },
   });
+
   return (
     <Box
       sx={{
@@ -323,7 +345,7 @@ const ContactForm = () => {
                         label="First Name*"
                         type="text"
                         value={formik.values.firstName}
-                        handlerChange={formik.handleChange}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
                           formik.touched.firstName &&
@@ -340,7 +362,7 @@ const ContactForm = () => {
                         label="Last Name*"
                         type="text"
                         value={formik.values.lastName}
-                        handlerChange={formik.handleChange}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
                           formik.touched.lastName &&
@@ -357,7 +379,7 @@ const ContactForm = () => {
                         label="Email*"
                         type="email"
                         value={formik.values.email}
-                        handlerChange={formik.handleChange}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
                           formik.touched.email && Boolean(formik.errors.email)
@@ -371,7 +393,7 @@ const ContactForm = () => {
                         label="Phone Number"
                         type="text"
                         value={formik.values.phoneNumber}
-                        handlerChange={formik.handleChange}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
                           formik.touched.phoneNumber &&
@@ -389,7 +411,7 @@ const ContactForm = () => {
                         label="What are you seeking?*"
                         type="text"
                         value={formik.values.subject}
-                        handlerChange={formik.handleChange}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
                           formik.touched.subject &&
@@ -408,7 +430,7 @@ const ContactForm = () => {
                         label="Please drop your message.*"
                         type="text"
                         value={formik.values.message}
-                        handlerChange={formik.handleChange}
+                        onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         error={
                           formik.touched.message &&
