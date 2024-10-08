@@ -15,7 +15,7 @@ const SocialIcons = ({ justifyContent, marginTop, marginLeft }) => {
       }}
     >
       <a
-        href="mailto:arsi.irshad1996@gmail.com"
+        href="mailto:arsi.softwareengineer@gmail.com"
         target="_blank"
         rel="noopener noreferrer"
       >
