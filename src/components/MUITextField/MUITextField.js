@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { TextField } from "@mui/material";
 
 const MUITextField = ({
@@ -13,8 +13,6 @@ const MUITextField = ({
   onChange,
   onBlur,
 }) => {
-  const [isFocused, setIsFocused] = useState(false);
-
   return (
     <TextField
       fullWidth

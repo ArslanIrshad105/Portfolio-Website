@@ -13,8 +13,8 @@ import "./about.css";
 
 const data = [
   {
-    count: "280",
-    title: "Google Review",
+    count: "20",
+    title: "Trusted Clients",
   },
   {
     count: "4",

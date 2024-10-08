@@ -16,7 +16,7 @@ const Navbar = ({ activeSection }) => {
   return (
     <>
       {isHeader && !isMobile && <DesktopNavbar activeSection={activeSection} />}
-      {isHeader && isMobile && <MobileNavbar />}
+      {isHeader && isMobile && <MobileNavbar activeSection={activeSection} />}
     </>
   );
 };

@@ -73,37 +73,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-start",
 }));
 
-// const menuItems = [
-//   {
-//     name: "HOME",
-//     id: "#home",
-//   },
-//   {
-//     name: "ABOUT ME",
-//     id: "#about",
-//   },
-//   {
-//     name: "SERVICES",
-//     id: "#services",
-//   },
-//   {
-//     name: "SKILLS",
-//     id: "#skills",
-//   },
-//   {
-//     name: "PROJECTS",
-//     id: "#projects",
-//   },
-//   {
-//     name: "CONTACT",
-//     id: "#contact",
-//   },
-// ];
-
-const MobileNavbar = () => {
+const MobileNavbar = ({ activeSection }) => {
   const [open, setOpen] = useState(false);
-  const [navbarBg, setNavbarBg] = useState("transparent"); // State for background color
-  const [activeSection, setActiveSection] = useState("#home");
+  const [navbarBg, setNavbarBg] = useState("transparent");
   const drawerRef = useRef();
 
   const handleDrawerOpen = () => {
@@ -120,13 +92,6 @@ const MobileNavbar = () => {
       setNavbarBg("transparent"); // Transparent background when at the top
     }
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   // Detect clicks outside the drawer to close it
   useEffect(() => {
@@ -147,6 +112,13 @@ const MobileNavbar = () => {
     };
   }, [open]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // Scroll to section when clicking a link
   const handleMenuClick = (event, sectionId) => {
     event.preventDefault();
@@ -157,7 +129,6 @@ const MobileNavbar = () => {
         behavior: "smooth",
         block: "start",
       });
-      setActiveSection(sectionId); // Update active section on click
     }
   };
 
@@ -176,7 +147,7 @@ const MobileNavbar = () => {
           <Box sx={{ flexGrow: 1 }}>
             <Box
               component="img"
-              src="assets/media/images/arslan-logo.svg" // Replace with your logo path
+              src="assets/media/images/arslan-logo.svg"
               alt="Logo"
               sx={{ height: 40, marginRight: 2 }}
             />

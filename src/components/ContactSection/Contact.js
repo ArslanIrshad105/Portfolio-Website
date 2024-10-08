@@ -88,6 +88,15 @@ const ContactForm = () => {
         alignItems: "center",
       }}
     >
+      {alert.show && (
+        <BasicAlerts
+          show={alert.show}
+          severity={alert.severity}
+          alertTitle={alert.title}
+          alertbody={alert.body}
+          setAlert={setAlert}
+        />
+      )}
       <Box
         sx={{
           backgroundColor: "#0788ff1a",
@@ -478,16 +487,6 @@ const ContactForm = () => {
           </Grid>
         </Grid>
       </Box>
-
-      {alert.show && (
-        <BasicAlerts
-          show={alert.show}
-          severity={alert.severity}
-          alertTitle={alert.title}
-          alertbody={alert.body}
-          setAlert={setAlert}
-        />
-      )}
     </Box>
   );
 };

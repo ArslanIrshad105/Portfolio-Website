@@ -8,6 +8,7 @@ import ContactSection from "@/components/ContactSection/Contact";
 import Footer from "@/components/Footer/Footer";
 import Slider from "@/components/LogosSection/Logos";
 import Projects from "@/components/Projects_Section/Projects";
+import Services from "@/components/Services_Section/ServicesSection";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("");
@@ -69,6 +70,9 @@ export default function Home() {
       </div>
       <div id="about" ref={sectionRefs.about}>
         <About />
+      </div>
+      <div id="services" ref={sectionRefs.services}>
+        <Services />
       </div>
       <div id="projects" ref={sectionRefs.projects}>
         <Projects />
